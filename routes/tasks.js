@@ -6,9 +6,15 @@ router.get('/', (req, res) => {
     res.status(200).json({ success: true, data: tasks });
 });
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   const tasks = req.app.locals.tasks;
-  res.status(200).json({ success: true, data: tasks });
+  const taskId = parseInt(req.params.id);
+  const found = tasks.find(task => task.id === taskId);
+  if (found) {
+    res.status(200).json(found);
+  } else {
+    res.status(404).json({ error: 'Task not found' });
+  }
 });
 
 
