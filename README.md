@@ -4,7 +4,7 @@ A simple Node.js/Express REST API for managing tasks, including features for lis
 ### Setup & Run Instructions
 1. Clone the repository (if using Git):
    ```
-   git clone <your-repo-url>
+   git clone https://github.com/farhanfuad02/lab02.git
    cd <your-project-folder>
    ```
 2. Install dependencies:
