@@ -1,5 +1,5 @@
 const express = require('express');
-const taskRouter = require('./routes/tasks');
+const taskRouter = require('./routes/tasks.js');
 const app = express();
 
 // Parse JSON bodies

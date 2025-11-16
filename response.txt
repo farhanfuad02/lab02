@@ -1,1 +1,9 @@
-{"error":"Task not found"}
+For tasks/999
+{
+    "error": "Task not found"
+}
+
+For tasks/abc
+{
+    "error": "Invalid ID format"
+}
