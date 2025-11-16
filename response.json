@@ -1,0 +1,40 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "title": "Sample Task 1",
+            "completed": false,
+            "priority": "high",
+            "createdAt": "2025-11-16T03:00:00.000Z"
+        },
+        {
+            "id": 2,
+            "title": "Sample Task 2",
+            "completed": true,
+            "priority": "medium",
+            "createdAt": "2025-11-15T08:00:00.000Z"
+        },
+        {
+            "id": 3,
+            "title": "Sample Task 3",
+            "completed": false,
+            "priority": "low",
+            "createdAt": "2025-11-14T04:00:00.000Z"
+        },
+        {
+            "id": 4,
+            "title": "Sample Task 4",
+            "completed": true,
+            "priority": "medium",
+            "createdAt": "2025-11-13T11:00:00.000Z"
+        },
+        {
+            "id": 5,
+            "title": "Sample Task 5",
+            "completed": false,
+            "priority": "high",
+            "createdAt": "2025-11-12T07:00:00.000Z"
+        }
+    ]
+}
