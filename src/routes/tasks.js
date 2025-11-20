@@ -31,12 +31,25 @@ router.get('/:id', (req, res) => {
 // POST /tasks - create a new task
 router.post('/', (req, res) => {
   const { title, priority } = req.body;
-  if (!title || typeof title !== 'string' || title.trim().length === 0 || !priority) {
-    return res.status(400).json({ error: 'Title and priority required' });
+
+  // Validate title
+  if (!title || typeof title !== 'string' || title.trim().length === 0) {
+    return res.status(400).json({ error: 'Title is required and must be a non-empty string' });
   }
+
+  // Validate priority
+  const validPriorities = ['low', 'medium', 'high'];
+  if (!priority || !validPriorities.includes(priority)) {
+    return res.status(400).json({ error: 'Priority must be one of: low, medium, high' });
+  }
+
   const tasks = req.app.locals.tasks;
+
+  // Generate new ID (max ID + 1)
+  const maxId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) : 0;
+
   const newTask = {
-    id: Date.now(),
+    id: maxId + 1,
     title: title.trim(),
     completed: false,
     priority,

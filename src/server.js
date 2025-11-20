@@ -28,6 +28,17 @@ app.get('/', (req, res) => {
   res.send('Welcome to your Task Manager API!');
 });
 
+// 404 Handler
+app.use((req, res, next) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
+
 // Start server
 const PORT = 3000;
 app.listen(PORT, () => {
